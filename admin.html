@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>CineTrack</title>
+</head>
+<body>
+    <header class="bg-black px-4 sm:px-6 lg:px-10 py-3 border-b border-red-800">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center justify-center shrink-0">
+                <img src="src/img/logo.png" alt="Action logo"
+                    class="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 object-contain">
+                <img src="src/img/title.png" alt="CineTrack"
+                    class="w-28 h-14 sm:w-32 sm:h-16 lg:w-36 lg:h-20 object-contain">
+            </div>
+            <div class="flex items-center gap-2 sm:gap-3 w-full sm:w-auto">
+                <select name="kind" id="kind"
+                    class="font-['inter'] border-2 border-red-800 rounded-md px-2 py-1 text-xs bg-black text-red-800 sm:text-sm shrink-0 h-[32px]">
+                    <option value="tous">Tous</option>
+                    <option value="Series">Series</option>
+                    <option value="movie">Films</option>
+                </select>
+                <input type="text" name="movie_title" id="movie" placeholder="e.g., Fight Club"
+                    class="min-w-0 flex-1 sm:w-40 lg:w-52 h-[30px] p-2 text-center placeholder-red-800 rounded-md border-2 border-red-800 bg-black outline-none">
+                <img src="src/img/search.png" alt="Search" class="w-7 h-7 sm:w-8 sm:h-8 object-contain shrink-0">
+            </div>
+        </div>
+    </header>
+    <footer class="flex justify-center items-center bg-black border-t border-red-800 py-4 px-3">
+       <p class="text-white text-sm text-center">© CineTrack · 2026</p>
+    </footer>
+</body>
+</html>
