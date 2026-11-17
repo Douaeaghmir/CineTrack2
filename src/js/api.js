@@ -3,7 +3,7 @@ export async function fetchdata()
 {
     try {
         const response = await fetch(
-            "https://raw.githubusercontent.com/ouchad97/cinetrack-api/main/cinetrack-data.json"
+            "https://6afb0f56730c1d152f33077a.mockapi.io/api/cinetrack/cinetrack"
         );
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
