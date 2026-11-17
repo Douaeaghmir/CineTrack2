@@ -35,13 +35,11 @@ export function messages(displayCards)
 export function displaCardFav(movies) {
     return `
         <article  class="flex items-center gap-3 bg-zinc-900 p-2 rounded-lg mb-3">
-
             <img 
                 src="${movies.image}" 
                 alt="${movies.title}"
                 class="w-16 h-20 object-cover rounded-md"
             >
-
             <h3 class="text-white font-bold flex-1">
                 ${movies.title}
             </h3>
