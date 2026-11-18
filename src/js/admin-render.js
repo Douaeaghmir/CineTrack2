@@ -1,5 +1,6 @@
+import { fetchdata, modifierDonner } from "./api.js";
 
-import { fetchdata }  from "./api.js";
+// import { fetchdata}  from "./api.js";
 const moviesTable = document.getElementById("moviesTable");
 
 const movies = await fetchdata();
@@ -33,3 +34,4 @@ export function renderAdminMovies(movies) {
     `).join("");
 }
 renderAdminMovies(movies);
+

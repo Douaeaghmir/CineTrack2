@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>CineTrack</title>
 </head>
-<body>
+
+<body class="bg-black">
     <header class="bg-black px-4 sm:px-6 lg:px-10 py-3 border-b border-red-800">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center justify-center shrink-0">
@@ -24,15 +26,38 @@
                 </select>
                 <input type="text" name="movie_title" id="movie" placeholder="e.g., Fight Club"
                     class="min-w-0 flex-1 sm:w-40 lg:w-52 h-[30px] p-2 text-center placeholder-red-800 rounded-md border-2 border-red-800 bg-black outline-none">
-                <img src="src/img/profile-removebg-preview.png" alt="profile" class="w-7 h-7 sm:w-8 sm:h-8 object-contain shrink-0">
+                <img src="src/img/profile-removebg-preview.png" alt="profile"
+                    class="w-7 h-7 sm:w-8 sm:h-8 object-contain shrink-0">
             </div>
         </div>
     </header>
+    <div class="bg-black">
+        <button class=" border border-red-600 rounded bg-red-600 font-bold text-white  flex justify-self-end  m-4 px-5 py-2"> Add + </button>
+    </div>
+        <main>
+            <div class="bg-[#161619]  p-4 w-full overflow-x-auto bg-black">
+                <table class="w-full text-left text-white border-collapse">
+                    <thead class="bg-[#202024] text-gray-400 text-xs">
+                        <tr>
+                            <th class="p-4">TITLE</th>
+                            <th class="p-4">TYPE</th>
+                            <th class="p-4">YEAR</th>
+                            <th class="p-4">RATING</th>
+                            <th class="p-4">STATUS</th>
+                            <th class="p-4">ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="moviesTable" class="text-sm">
+                    </tbody>
+                </table>
+            </div>
+        </main>
     <footer class="flex justify-center items-center bg-black border-t border-red-800 py-4 px-3">
         <a href="index.html" class="absolute left-3 sm:left-6">
-        <span class="text-white border-2 border-red-600 p-2 rounded hover:bg-red-600 transition"> <- go back</span>
+            <span class="text-white border-2 border-red-600 p-2 rounded hover:bg-red-600 transition"> <- go back</span>
         </a>
-       <p class="text-white text-sm text-center">© CineTrack · 2026</p>
+        <p class="text-white text-sm text-center">© CineTrack · 2026</p>
     </footer>
+    <script type="module" src="./src/js/admin-render.js"></script>
 </body>
 </html>
