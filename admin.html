@@ -40,8 +40,8 @@
         <div id="formContainer" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
             <form id="addMovieForm" class="bg-[#202024] text-white p-6 rounded-xl w-full max-w-lg space-y-4 max-h-[90vh] overflow-y-auto">
                 <div class="flex items-center justify-between">
-                <h2 class="text-lg">Add a new movie</h2>
-                <button id="close" class="text-white bg-red-600 border border-red-600 rounded p-3 hover:bg-red-800">X</button>
+                <h2 class="text-lg" id="formTitle">Add a new movie</h2>
+                <button id="close" type="button" class="text-white bg-red-600 border border-red-600 rounded p-3 hover:bg-red-800">X</button>
                 </div>
                 <input type="text" id="title" placeholder="Movie title" class="w-full p-2 rounded bg-black border border-red-800 outline-none" required>
                 <select id="type" required class="w-full p-2 rounded bg-black border border-red-800 outline-none">
@@ -57,7 +57,7 @@
                 <input type="text" id="directors" placeholder="Directors (comma separated)" class="w-full p-2 rounded bg-black border border-red-800 outline-none" required>
                 <input type="text" id="productionCountries" placeholder="Production countries (comma separated)"
                     class="w-full p-2 rounded bg-black border border-red-800 outline-none" required>
-                <button type="submit" class="border rounded-md border-red-600 bg-red-600 p-2 mr-2 hover:bg-red-800">Save movie</button>
+                <button type="submit" id="saveMovie" class="border rounded-md border-red-600 bg-red-600 p-2 mr-2 hover:bg-red-800">Save movie</button>
                 <button type="button" id="cancelAdd" class="border rounded-md border-gray-600 bg-gray-600 p-2 ml-2 hover:bg-gray-800">Cancel</button>
             </form>
         </div>

@@ -1,4 +1,4 @@
-import { fetchdata } from "./api.js";
+import { fetchdata , modifierDonner} from "./api.js";
 import { affichCard , messages} from "./render.js";
 import { searchMatch , FilterMatch } from "./filters.js";
 import { clickButtonFav } from "./favorites.js"
@@ -74,35 +74,3 @@ function updateDisplay(result)
     displayPages()
     displayPagination();
 }
-
-
-async function testPUT() {
-
-    const movies = await fetchdata();
-
-    console.log("All movies:", movies);
-
-    const movie = movies[0];
-
-    if (!movie) {
-        console.log("No movies found!");
-        return;
-    }
-
-    console.log("Before update:", movie);
-
-    const updatedMovie = await modifierDonner(movie.id, {
-        ...movie,
-        title: "PUT TEST SUCCESS"
-    });
-
-    console.log("After update:", updatedMovie);
-
-    const checkMovies = await fetchdata();
-
-    const check = checkMovies.find(item => item.id == movie.id);
-
-    console.log("Verification:", check);
-}
-
-testPUT();
