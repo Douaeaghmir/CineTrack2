@@ -63,3 +63,19 @@ export async function modifierDonner(id , movie)
         return null;
     }
 }
+export async function deletedonner(id , movie) {
+    try{
+        const response = await fetch(`${URl}/${id}` , {
+            method : "DELETE",
+        })
+        if(!response.ok)
+        {
+            throw new Error(`HTTP error status : ${response.status}`)
+        }
+        return true;
+    }
+    catch(error) {
+        console.error("error updating movie : " , error.message);
+        return false;
+    }
+}
