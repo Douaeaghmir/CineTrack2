@@ -5,16 +5,20 @@ const formContainer = document.getElementById("formContainer");
 const addMovieForm = document.getElementById("addMovieForm") 
 const cancelAdd = document.getElementById("cancelAdd");
 const moviesTable = document.getElementById("moviesTable");
-
+const close = document.getElementById("close");
 const movies = await fetchdata();
 
-ajouter.addEventListener("click", () => {
-    formContainer.classList.remove("hidden");
-});
-
-cancelAdd.addEventListener("click", () => {
-    formContainer.classList.add("hidden");
-});
+document.addEventListener("click" , (event)=>{
+    if(event.target.closest("#ajouter"))
+    {
+        formContainer.classList.remove("hidden");
+    }
+    else if(event.target.closest("#close") || event.target.closest("#cancelAdd"))
+    {
+        formContainer.classList.add("hidden");
+        addMovieForm.reset();
+    }
+})
 export function renderAdminMovies(movies) {
     console.log(movies);
     moviesTable.innerHTML = movies.map(movie => `
