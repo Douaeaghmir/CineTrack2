@@ -3,12 +3,18 @@ import { fetchdata, ajouterDonnees } from "./api.js";
 const ajouter = document.getElementById("ajouter");
 const formContainer = document.getElementById("formContainer");
 const addMovieForm = document.getElementById("addMovieForm") 
-const moviesTable = document.getElementById("moviesTable");
 const cancelAdd = document.getElementById("cancelAdd");
+const moviesTable = document.getElementById("moviesTable");
 
 const movies = await fetchdata();
 
+ajouter.addEventListener("click", () => {
+    formContainer.classList.remove("hidden");
+});
 
+cancelAdd.addEventListener("click", () => {
+    formContainer.classList.add("hidden");
+});
 export function renderAdminMovies(movies) {
     console.log(movies);
     moviesTable.innerHTML = movies.map(movie => `
