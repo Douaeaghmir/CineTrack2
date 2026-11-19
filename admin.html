@@ -32,26 +32,49 @@
         </div>
     </header>
     <div class="bg-black">
-        <button class=" border border-red-600 rounded bg-red-600 font-bold text-white  flex justify-self-end  m-4 px-5 py-2"> Add + </button>
+        <button id="ajouter"
+            class=" border border-red-600 rounded bg-red-600 font-bold text-white  flex justify-self-end  m-4 px-5 py-2">
+            Add + </button>
     </div>
-        <main>
-            <div class="bg-[#161619]  p-4 w-full overflow-x-auto bg-black">
-                <table class="w-full text-left text-white border-collapse">
-                    <thead class="bg-[#202024] text-gray-400 text-xs">
-                        <tr>
-                            <th class="p-4">TITLE</th>
-                            <th class="p-4">TYPE</th>
-                            <th class="p-4">YEAR</th>
-                            <th class="p-4">RATING</th>
-                            <th class="p-4">STATUS</th>
-                            <th class="p-4">ACTIONS</th>
-                        </tr>
-                    </thead>
-                    <tbody id="moviesTable" class="text-sm">
-                    </tbody>
-                </table>
-            </div>
-        </main>
+    <main>
+        <div id="formContainer" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+            <form id="addMovieForm" class="bg-[#202024] text-white p-6 rounded-xl w-full max-w-lg space-y-4 max-h-[90vh] overflow-y-auto">
+                <h2>Add a new movie</h2>
+                <input type="text" id="title" placeholder="Movie title" class="w-full p-2 rounded bg-black border border-red-800 outline-none" required>
+                <select id="type" required>
+                    <option value="">Choose type</option>
+                    <option value="movie">Movie</option>
+                    <option value="series">Series</option>
+                </select>
+                <input type="number" id="releaseYear" placeholder="Release year" class="w-full p-2 rounded bg-black border border-red-800 outline-none" required>
+                <input type="number" id="duration" placeholder="Duration in minutes" class="w-full p-2 rounded bg-black border border-red-800 outline-none" required>
+                <input type="text" id="image" placeholder="Image URL" class="w-full p-2 rounded bg-black border border-red-800 outline-none" required>
+                <textarea id="description" placeholder="Description"  required></textarea>
+                <input type="text" id="genres" placeholder="Genres (comma separated)" class="w-full p-2 rounded bg-black border border-red-800 outline-none" required>
+                <input type="text" id="directors" placeholder="Directors (comma separated)" class="w-full p-2 rounded bg-black border border-red-800 outline-none" required>
+                <input type="text" id="productionCountries" placeholder="Production countries (comma separated)"
+                    class="w-full p-2 rounded bg-black border border-red-800 outline-none" required>
+                <button type="submit">Save movie</button>
+                <button type="button" id="cancelAdd">Cancel</button>
+            </form>
+        </div>
+        <div class="bg-[#161619]  p-4 w-full overflow-x-auto bg-black">
+            <table class="w-full text-left text-white border-collapse">
+                <thead class="bg-[#202024] text-gray-400 text-xs">
+                    <tr>
+                        <th class="p-4">TITLE</th>
+                        <th class="p-4">TYPE</th>
+                        <th class="p-4">YEAR</th>
+                        <th class="p-4">RATING</th>
+                        <th class="p-4">STATUS</th>
+                        <th class="p-4">ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody id="moviesTable" class="text-sm">
+                </tbody>
+            </table>
+        </div>
+    </main>
     <footer class="flex justify-center items-center bg-black border-t border-red-800 py-4 px-3">
         <a href="index.html" class="absolute left-3 sm:left-6">
             <span class="text-white border-2 border-red-600 p-2 rounded hover:bg-red-600 transition"> <- go back</span>
@@ -60,4 +83,5 @@
     </footer>
     <script type="module" src="./src/js/admin-render.js"></script>
 </body>
+
 </html>

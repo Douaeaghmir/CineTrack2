@@ -1,7 +1,10 @@
-import { fetchdata, deletedonner } from "./api.js";
+import { fetchdata, ajouterDonnees } from "./api.js";
 
-// import { fetchdata}  from "./api.js";
+const ajouter = document.getElementById("ajouter");
+const formContainer = document.getElementById("formContainer");
+const addMovieForm = document.getElementById("addMovieForm") 
 const moviesTable = document.getElementById("moviesTable");
+const cancelAdd = document.getElementById("cancelAdd");
 
 const movies = await fetchdata();
 

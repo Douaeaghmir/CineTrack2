@@ -63,7 +63,7 @@ export async function modifierDonner(id , movie)
         return null;
     }
 }
-export async function deletedonner(id , movie) {
+export async function deletedonner(id) {
     try{
         const response = await fetch(`${URl}/${id}` , {
             method : "DELETE",
