@@ -47,3 +47,29 @@ export function renderAdminMovies(movies) {
     `).join("");
 }
 renderAdminMovies(movies);
+
+addMovieForm.addEventListener("submit" , async (e)=> {
+    e.preventDefault();
+
+    const newMovie = {
+        title : document.getElementById("title").value,
+        type : document.getElementById("type").value,
+        releaseYear : document.getElementById("releaseYear").value,
+        duration : Number(document.getElementById("duration").value),
+        image : document.getElementById("image").value,
+        description : document.getElementById("description").value,
+        genres : document.getElementById("genres").value.split(",").map(items => items.trim()),
+        directors : document.getElementById("directors").value.split(",").map(items => items.trim()),
+        productionCountries : document.getElementById("productionCountries").value.split(",").map(items => items.trim()),
+    }
+    const result = await ajouterDonnees(newMovie);
+    if(result)
+    {
+        console.log("movie was added successfully" , result);
+        addMovieForm.reset();
+        formContainer.classList.add("hidden");
+    }
+    else{
+        alert("failed to add the movie");
+    }
+})
