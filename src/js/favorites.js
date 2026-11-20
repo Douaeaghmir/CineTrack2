@@ -4,22 +4,25 @@ let favMovies = JSON.parse(localStorage.getItem("favorites")) || [];
 
 
 export function clickButtonFav(movies, favourites) {
-    favourites.innerHTML = favMovies
-    .map(movie => displaCardFav(movie))
-    .join("");
+    const favoriteMovies = movies.filter(movie =>
+        favMovies.includes(movie.id)
+    );
+    favourites.innerHTML = favoriteMovies
+        .map(movie => displaCardFav(movie))
+        .join("");
     const btn = document.querySelectorAll(".added");
 
     btn.forEach(button => {
         button.addEventListener("click", () => {
             const movieId = button.dataset.id;
             const movie = movies.find(movie => movie.id == movieId);
-            const exist = favMovies.some(movie => movie.id == movieId);
+            const exist = favMovies.includes(movieId);
 
             if (exist) {
                 favMovies = favMovies.filter(movie => movie.id != movieId);
             }
             else
-                favMovies.push(movie);
+                favMovies.push(movie.id);
             saveFavorites(favMovies);
             favourites.innerHTML = favMovies
                 .map(movie => displaCardFav(movie))
