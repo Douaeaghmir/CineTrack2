@@ -5,7 +5,7 @@ let favMovies = JSON.parse(localStorage.getItem("favorites")) || [];
 
 export function clickButtonFav(movies, favourites) {
     const favoriteMovies = movies.filter(movie =>
-        favMovies.includes(movie.id)
+        favMovies.includes(String(movie.id))
     );
     favourites.innerHTML = favoriteMovies
         .map(movie => displaCardFav(movie))
@@ -19,22 +19,26 @@ export function clickButtonFav(movies, favourites) {
             const exist = favMovies.includes(movieId);
 
             if (exist) {
-                favMovies = favMovies.filter(movie => movie.id != movieId);
+                favMovies = favMovies.filter(id => id != movieId);
             }
             else
-                favMovies.push(movie.id);
+                favMovies.push(String(movie.id));
             saveFavorites(favMovies);
-            favourites.innerHTML = favMovies
+            const favoriteMovies = movies.filter(movie =>
+                favMovies.includes(String(movie.id))
+            );
+
+            favourites.innerHTML = favoriteMovies
                 .map(movie => displaCardFav(movie))
                 .join("");
         })
-    })
+    });
     favourites.addEventListener("click", (event) => {
 
         if (event.target.classList.contains("removeFav")) {
             const movieId = event.target.dataset.id;
 
-            favMovies = favMovies.filter(movie => movie.id != movieId);
+            favMovies = favMovies.filter(id => id != movieId);
             saveFavorites(favMovies);
             const originalButton = document.querySelector(
                 `.added[data-id="${movieId}"]`
@@ -43,7 +47,11 @@ export function clickButtonFav(movies, favourites) {
             if (originalButton) {
                 originalButton.textContent = "🖤";
             }
-            favourites.innerHTML = favMovies
+            const favoriteMovies = movies.filter(movie =>
+                favMovies.includes(String(movie.id))
+            );
+
+            favourites.innerHTML = favoriteMovies
                 .map(movie => displaCardFav(movie))
                 .join("");
         }
