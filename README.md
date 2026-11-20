@@ -1,4 +1,3 @@
-# CineTrack2
 # 🎬 CINATRACK
 ### Your personal movie discovery experience
 
@@ -111,3 +110,92 @@ Ce projet nous a permis de travailler sur plusieurs notions essentielles :
 <p align="center">
   🎬 **CINATRACK — Explore the world of cinema!**
 </p>
+
+# 🎬 CineTrack2
+
+## 📖 Présentation du projet
+
+CineTrack2 est une application web de gestion de films qui permet aux utilisateurs de découvrir, consulter et gérer une collection de films. L'application propose également un système de commentaires permettant aux utilisateurs de partager leurs avis.
+
+## ✨ Fonctionnalités principales
+
+### 🎥 Interface utilisateur
+- Afficher une liste de films.
+- Consulter les détails de chaque film.
+- Rechercher et filtrer les films.
+- Ajouter des commentaires aux films.
+- Afficher les commentaires associés à chaque film.
+
+### 🔐 Tableau de bord administrateur
+- Afficher tous les films dans un tableau.
+- Ajouter de nouveaux films.
+- Modifier les informations des films existants.
+- Gérer les données des films à travers une API.
+
+### 💬 Gestion des commentaires
+- Récupérer les commentaires depuis l'API.
+- Ajouter de nouveaux commentaires.
+- Afficher les commentaires dans une fenêtre modale.
+
+## 🛠️ Technologies utilisées
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Tailwind CSS
+- Fetch API
+- MockAPI
+- Git et GitHub
+
+## 📁 Structure du projet
+
+```text
+CineTrack2/
+├── index.html
+├── admin.html
+├── src/
+│   ├── api.js
+│   ├── admin-render.js
+│   ├── admin.js
+│   └── ...
+└── README.md
+```
+
+## 🚀 Installation et lancement
+
+1. Cloner le dépôt GitHub :
+
+```bash
+git clone URL_DU_DEPOT
+```
+
+2. Accéder au dossier du projet :
+
+```bash
+cd CineTrack2
+```
+
+3. Ouvrir le projet avec Visual Studio Code.
+4. Lancer l'application avec l'extension Live Server.
+
+## 🌐 API
+
+Le projet utilise MockAPI pour récupérer, ajouter et modifier les données des films et des commentaires à travers des requêtes HTTP.
+
+## 🎯 Objectifs pédagogiques
+
+- Pratiquer JavaScript moderne (ES6+).
+- Comprendre la programmation asynchrone avec async/await.
+- Manipuler les données provenant d'une API.
+- Maîtriser les opérations CRUD (Create, Read, Update, Delete).
+- Organiser le code avec les modules JavaScript.
+- Manipuler le DOM et gérer les événements.
+- Travailler en équipe avec Git et GitHub.
+
+## 👩‍💻 Réalisation
+
+Projet réalisé dans le cadre de la formation YouCode.
+
+---
+
+**CineTrack2 — Découvrez, gérez et partagez votre passion pour le cinéma !**
